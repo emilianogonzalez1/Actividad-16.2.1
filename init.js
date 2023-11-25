@@ -17,44 +17,45 @@ function checkPassword(){
     }
 }
 
-function terminos(){
-    const check = document.getElementById('terminos');
-    check.addEventListener('input',()=>{
-        if(check.checked){
-            console.log("true")
-            sessionStorage.setItem('terminos','true');
-            
-        }
-        else{
-            console.log("false")
-            sessionStorage.setItem('terminos','false');
-            
-            
-        }
-    })
-}
+const terminos = document.querySelector('#terminos');
+terminos.addEventListener('click',()=>{
+        const check = document.getElementById('terminos');
+        check.addEventListener('input',()=>{
+            if(check.checked){
+                console.log("true")
+                sessionStorage.setItem('terminos','true');
+                
+            }
+            else{
+                console.log("false")
+                sessionStorage.setItem('terminos','false');
+                
+                
+            }
+        })
+    
+})
+
 
 function validar(){
     let localCheck = sessionStorage.getItem('terminos')
     if(form.checkValidity() && localCheck == 'true'){
-        window.location.reload;
         warning.classList.add('d-none')
         console.log("pasa")
     }
-    if(form.checkValidity() && localCheck == 'false'){
+    else if(form.checkValidity() && localCheck == 'false'){
         warning.classList.remove('d-none')
-        e.preventDefault()
+        event.preventDefault()
     }
     else{
-        e.preventDefault()
         alert("Complete todos los campos")
+        event.preventDefault()
         console.log("no pasa")
     }
 }
 
-
-form.addEventListener('submit',(e)=>{
+const btn = document.querySelector('#boton')
+btn.addEventListener('click',(e)=>{
     checkPassword()
     validar()
 })
-

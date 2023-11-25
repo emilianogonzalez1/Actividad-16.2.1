@@ -20,13 +20,13 @@
           <hr class="my-4">
           <div class="row g-3">
             <div class="col-sm-6">
-              <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="nombre" required pattern="{A-Za-z}">
+              <label for="nombre" class="form-label">Nombre(sin tildes)</label>
+              <input type="text" class="form-control" id="nombre" required pattern="^[A-Za-z]+$">
             </div>
 
             <div class="col-sm-6">
-              <label for="apellido" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="apellido" required pattern="{A-Za-z}">
+              <label for="apellido" class="form-label">Apellido(sin tildes)</label>
+              <input type="text" class="form-control" id="apellido" required pattern="^[A-Za-z]+$">
             </div>
 
             <div class="col-12">
@@ -52,7 +52,7 @@
             </div>
 
 
-            <button class="btn btn-primary" type="submit">Registrarme</button>
+            <button id="boton" class="btn btn-primary" type="submit">Registrarme</button>
 
 
           </div>
@@ -78,7 +78,7 @@
         </div>
         <div class="modal-footer">
           <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="terminos" required onclick="terminos()">
+            <input type="checkbox" class="form-check-input" id="terminos" required>
             <label class="form-check-label" for="terminos">Acepto los términos y condiciones del servicio.</label>
           </div>
         </div>
